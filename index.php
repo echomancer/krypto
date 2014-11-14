@@ -1,6 +1,8 @@
 <?php
-$input = isset($_REQUEST['text-input']) ? $_REQUEST['text-input'] : '';
-
+require_once("functions.php");  // Contains all functions needed for conversion
+$input = isset($_REQUEST['text-input']) ? $_REQUEST['text-input'] : ''; // Set up the input from the form
+$hex = strToHex($input);        // Convert it into a hex string
+$output = convert($hex);        // Convert the hex string into div representations
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +14,7 @@ $input = isset($_REQUEST['text-input']) ? $_REQUEST['text-input'] : '';
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,12 +24,20 @@ $input = isset($_REQUEST['text-input']) ? $_REQUEST['text-input'] : '';
     <![endif]-->
   </head>
   <body>
-    <form id="text-form" name="text-form" action="index.php" method="post">
-      <textarea id="text-input" name="text-input"><?php echo $input ?></textarea>
-      <input type="button" id="submit-button" name="submit-button" value="Generate Geometric" />
-    </form>
-    <div id="body-content" class="container-fluid">
-      <?php $output ?>
+    <div class="container">
+      <div class="content">
+        <form id="text-form" name="text-form" action="index.php" method="post" role="form">
+          <div class="form-group">
+            <label for="text-input">Text to Convert</label>
+            <textarea id="text-input" name="text-input" class="form-control"><?php echo $input ?></textarea>
+          </div>
+          <button type="submit" id="submit-button" name="submit-button" class="btn btn-primary btn-large">Kryptonize</button>
+        </form>
+        </br>
+        <div id="output-content">
+          <?php echo $output; ?>
+        </div>
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
