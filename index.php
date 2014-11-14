@@ -32,6 +32,7 @@ $output = convert($hex);        // Convert the hex string into div representatio
             <textarea id="text-input" name="text-input" class="form-control"><?php echo $input ?></textarea>
           </div>
           <button type="submit" id="submit-button" name="submit-button" class="btn btn-primary btn-large">Kryptonize</button>
+          <button type="button" id="clear" name="clear" class="btn btn-default btn-large">Clear</button>
         </form>
         </br>
         <div id="output-content">
@@ -43,5 +44,20 @@ $output = convert($hex);        // Convert the hex string into div representatio
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var height = $(".container").width()/12;
+        //height = 100;
+        //var heightStr = height+"px";
+        $(".box").each(function(){
+          $(this).height(height);
+        });
+        $("#clear").on("click", clear);
+      });
+
+      function clear(){
+        $("#text-input").html("");
+      }
+    </script>
   </body>
 </html>
