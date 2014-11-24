@@ -1,17 +1,25 @@
+.row {
+  padding-left: 20px;
+}
+.box {
+  margin: 2px 2px 2px 2px;
+  background-color: white;
+}
+
 .zero {
-  border-left: 1px solid black;
+  border-left: 2px solid black;
 }
 
 .one {
-  border-right: 1px solid black;
+  border-right: 2px solid black;
 }
 
 .two {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 }
 
 .three {
-  border-top: 1px solid black;
+  border-top: 2px solid black;
 }
 
 .content {

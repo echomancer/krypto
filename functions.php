@@ -13,27 +13,28 @@ function strToHex($string){
 function convert($hex){
   $ret = "";
   $len = strlen($hex);
-  $spans = intval($len/12);
-  $extra = $len%12;
+  $per = 11;
+  $spans = intval($len/$per);
+  $extra = $len%$per;
   //echo "Length: ".$len." Spans: ".$spans." Extras: ".$extra."</br>";
   $class = "col-xs-1 col-md-1 ";
   for($i=0;$i<$spans;$i++){
     $ret .= '<div class="row">';
-    for($j=0;$j<12;$j++){
-      $k = $i*12+$j;
+    for($j=0;$j<$per;$j++){
+      $k = $i*$per+$j;
       $m = $hex[$k];
       $c = getClass($m);
       //echo "Current index: ".$k."</br>";
       //echo "Current Hex Character: ".$char." Converted Class: ".$c."</br>";
       $ret .= '<div class="box '.$c.$class.'">&nbsp;</div>';
     }
-    $ret .= '</div></br>';
+    $ret .= '</div>';
   }
   if($extra > 0){
-    $class = getSize($extra);
+    //$class = getSize($extra);
     $ret .= '<div class="row">';
     for($i=0;$i<$extra;$i++){
-      $k = $spans*12+$i;
+      $k = $spans*$per+$i;
       $m = $hex[$k];
       $c = getClass($m);
       //echo "Current index: ".$k."</br>";
