@@ -26,6 +26,7 @@ function convert($hex){
       $c = getClass($m);
       //echo "Current index: ".$k."</br>";
       //echo "Current Hex Character: ".$char." Converted Class: ".$c."</br>";
+      //$ret .= '<div class="box '.$c.$class.'">&nbsp;'.$m.'</div>';
       $ret .= '<div class="box '.$c.$class.'">&nbsp;</div>';
     }
     $ret .= '</div>';
@@ -39,6 +40,7 @@ function convert($hex){
       $c = getClass($m);
       //echo "Current index: ".$k."</br>";
       //echo "Current Hex Character: ".$char." Converted Class: ".$c."</br>";
+      //$ret .= '<div class="box '.$c.$class.'">&nbsp;'.$m.'</div>';
       $ret .= '<div class="box '.$c.$class.'">&nbsp;</div>';
     }
     $ret .= '</div>';
