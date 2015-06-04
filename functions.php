@@ -43,7 +43,7 @@ function convert($hex){
     $ret .= '</div></br>';
   }
   if($extra > 0){
-    $class = getSize($extra);
+    //$class = getSize($extra);
     $ret .= '<div class="row">';
     for($i=0;$i<$extra;$i++){
       $k = $spans*12+$i;
