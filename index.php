@@ -1,4 +1,11 @@
 <?php
+/*
+File: index.php
+Programmer: Jason Perkins
+Purpose: Display text input form which then submits back to this page the text. 
+Then it converts it to hex and displays each hex character as box with lines for each side.
+*/
+
 require_once("functions.php");  // Contains all functions needed for conversion
 $input = isset($_REQUEST['text-input']) ? $_REQUEST['text-input'] : ''; // Set up the input from the form
 $hex = strToHex($input);        // Convert it into a hex string

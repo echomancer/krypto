@@ -1,3 +1,9 @@
+/*
+File: style.css
+Programmer: Jason Perkins
+Purpose: Contains all css for each class needed to display lines on sides of boxes
+*/
+
 .zero {
   border-left: 1px solid black;
 }

@@ -1,5 +1,14 @@
 <?php
+/*
+File: functions.php
+Programmer: Jason Perkins
+Purpose: Contains various functions needed by the index page.
+*/
 
+
+/*
+Converts a string into the hexadecimal equivilant string
+*/
 function strToHex($string){
     $hex = '';
     for ($i=0; $i<strlen($string); $i++){
@@ -10,6 +19,10 @@ function strToHex($string){
     return strToUpper($hex);
 }
 
+
+/*
+Converts the hex string into equivilant set of rows of divs that are boxes with a set of lines for sides
+*/
 function convert($hex){
   $ret = "";
   $len = strlen($hex);
@@ -45,6 +58,9 @@ function convert($hex){
   return $ret;
 }
 
+/*
+Returns the bootstrap 3 column size for the corresponding number of boxes to display
+*/
 function getSize($int){
   $ret = "";
   switch($int){
@@ -64,6 +80,9 @@ function getSize($int){
   return $ret;
 }
 
+/*
+Returns the classes needed to display the lines around the box based on the current hex character
+*/
 function getClass($char){
   $ret = "";
   switch($char){
